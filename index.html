@@ -13,6 +13,7 @@ body {
   color: black;
 }
 nav {
+  margin-top: 2rem;
   display: flex;
   justify-content: space-around;
 }
@@ -95,7 +96,13 @@ nav {
        }
       acc[letter].push(company);
       return acc;
-      }, {}
+      }, {});
+      return (
+        <nav>
+          {
+            Object.keys(grouped).sort().map( key => <Link key={ key }>{ key }</Link>)
+          }
+          </nav>
       );
       return (
         <div id='companiesPage'>
