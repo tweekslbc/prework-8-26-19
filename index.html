@@ -135,7 +135,7 @@
             </nav>
             {letter && grouped[letter] && (
               <ul>
-                {grouped[letter].map(company => (
+                {grouped[letter].map(company =>
                   <li key={company.id}>
                     <Link
                       to={`/companies/${letter}/${company.id}`}
@@ -148,7 +148,7 @@
                       {company.name}
                     </Link>
                   </li>
-                ))}
+                )}
               </ul>
             )}
           </div>
