@@ -42,12 +42,12 @@
         display: flex;
       }
 
-      #companiesPage > ul {
+      ul {
         list-style-type: none;
         flex: 1;
       }
 
-      #companiesPage > ul > li {
+      ul > li {
         margin-bottom: 1rem;
       }
 
@@ -151,27 +151,7 @@
                 )}
               </ul>
             )}
-          </div>
-        );
-        return (
-          <div id="companiesPage">
-            <ul>
-              {companies.map(company => (
-                <li key={company.id}>
-                  <Link
-                    to={`/companies/${company.id}`}
-                    className={
-                      location.pathname === `/companies/${company.id}`
-                        ? "selected"
-                        : ""
-                    }
-                  >
-                    {company.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            <Route path="/companies/:id" component={Company} />
+            <Route path="/companies/:letter/:id" component={Company} />
           </div>
         );
       };
